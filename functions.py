@@ -1,15 +1,19 @@
+import random
+
 # =================== variaveis de inicio =========================
-lista_itens = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]
+lista_itens = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]  
+lista_resultado = random.sample(lista_itens, 16)
+
+#l --- inhas apresentadas ---
 linha_1 = ['x', 'x', 'x', 'x']
 linha_2 = ['x', 'x', 'x', 'x']
 linha_3 = ['x', 'x', 'x', 'x']
 linha_4 = ['x', 'x', 'x', 'x']
 
-game = True
 
 # ========functions ========
 def imprimir_quadro(line_1, line_2, line_3, line_4): 
-    print('='  * 20)
+    print('='  * 30)
     lista_linhas = [line_1, line_2, line_3, line_4]
     for lista in lista_linhas:
         print('')
@@ -19,5 +23,67 @@ def imprimir_quadro(line_1, line_2, line_3, line_4):
             print(lista[i], '', end = '')
             i += 1
         print('|', end = '')
-    print('')
-    print('test')
+    print('\n')
+    print('='  * 30)
+
+def pegar_posicao():
+    #pega posição  
+    def main():  
+        valid = False    
+        while not valid:
+            x = validar_inteiro('linha ')
+            y = validar_inteiro('coluna')
+            valid = verificar_posicao(x, y)
+
+        posicao = [x, y]
+        return posicao
+
+    def validar_inteiro(texto):
+        valid = False
+        while not valid:
+            try:
+                x = int(input(f'Digite um valor para a {texto}: '))
+            except ValueError:
+                print('\nValor inválido. Digite novamente')
+            else:
+                return x
+
+    def verificar_posicao(x, y): #verificar se posição é válida
+        if (x != 1 and x != 2 and x != 3 and x != 4) or (y != 1 and y != 2 and y != 3 and y != 4):
+            print('posição inválida')
+            return False
+        else:
+            if y == 0:
+                if linha_1[x - 1] != 'x':
+                    print('Célula já revelada. Digite uma posição válida.')
+                    return False
+                else:
+                    return True
+
+            elif y == 1:
+                if linha_1[x - 1] != 'x':
+                    print('Célula já revelada. Digite uma posição válida.')
+                    return False
+                else:
+                    return True
+            elif y == 2:
+                if linha_1[x - 1] != 'x':
+                    print('Célula já revelada. Digite uma posição válida.')
+                    return False
+                else:
+                    return True
+            elif y == 3:
+                if linha_1[x - 1] != 'x':
+                    print('Célula já revelada. Digite uma posição válida.')
+                    return False
+                else:
+                    return True
+            else:
+                return True
+    return main()
+
+def verificar_posicao(line_1, line_2, line_3, line_4, pos_1, pos_2):
+    print('Verificando')
+
+
+
