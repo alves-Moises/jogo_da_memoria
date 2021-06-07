@@ -20,3 +20,4 @@ def imprimir_quadro(line_1, line_2, line_3, line_4):
             i += 1
         print('|', end = '')
     print('')
+    print('test')
