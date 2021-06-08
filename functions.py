@@ -18,7 +18,7 @@ linhaf_4 = lista_resultado[12:]
 
 
 # ========functions ========
-def imprimir_quadro(line_1, line_2, line_3, line_4): 
+def imprimir_quadro(line_1 = linha_1, line_2 = linha_2, line_3 = linha_3, line_4 = linha_4): 
     print('='  * 30)
     lista_linhas = [line_1, line_2, line_3, line_4]
     for lista in lista_linhas:
@@ -86,9 +86,8 @@ def pegar_posicao():
                     return True
             else:
                 return True
-                
-    return main()
 
+    return main()
 
 
 
