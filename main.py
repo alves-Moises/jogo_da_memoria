@@ -9,9 +9,12 @@ def main():
     #======= looping do jogo ========
     game = True
     i = 0
-    while game == True:
 
+    while game == True:
+        #========================= IMPRIMIR A TABELA ====================================
         functions.imprimir_quadro(functions.linha_1, functions.linha_2, functions.linha_3, functions.linha_4)
+
+        #==== Pegar as coordenadas =====
         print('Digite a primeira posição')
         print('=' * 30)
         posicao_1 = functions.pegar_posicao() #pegar posição e validar (x, y)
@@ -47,18 +50,27 @@ def main():
         if (posicao_1[0] == posicao_2[0]):   #mesma linha
             print('mesma linha')
 
-            if posicao_1[0] == 0:
+            if posicao_1[0] == 0: # pos_1 = x = 0     
                 nova_linha = functions.linha_1
                 nova_linha[posicao_1[1]] = functions.linhaf_1[posicao_1[1]]
                 nova_linha[posicao_2[1]] = functions.linhaf_1[posicao_2[1]]
-                if linha_verificando_1[posicao_1[1]] == linha_verificando_2[posicao_2[1]]:   #acertou
-                    functions.imprimir_quadro(nova_linha, functions.linha_2, functions.linha_3, functions.linha_4)
-                    print(linha_verificando_1, linha_verificando_2)
+                # functions.imprimir_quadro(nova_linha, functions.linha_2, functions.linha_3, functions.linha_4)   #imprimir a grade com linha 0
+                if linha_verificando_1[posicao_1[1]] == linha_verificando_2[posicao_2[1]]:  #acertou
+                    print('linhas? ', linha_verificando_1, linha_verificando_2)
                     functions.linha_1[posicao_1[1]] = functions.linhaf_1[posicao_1[1]]
                     functions.linha_1[posicao_2[1]] = functions.linhaf_1[posicao_2[1]]
+                    del linha_verificando_1
+                    del linha_verificando_2
                     print('Acertou')
                 else:
+                    del linha_verificando_1
+                    del linha_verificando_2
                     print('Errou')
+            print(functions.linha_1)
+
+
+
+
 
             # elif posicao_1[0] == 1:
             #     functions.linha_1[posicao_1[0]] = functions.linhaf_1[posicao_1[0]]
@@ -81,7 +93,7 @@ def main():
         
         
 
-        print('asd', linha_verificando_1, linha_verificando_2)
+        # print('pos valores', linha_verificando_1, linha_verificando_2)
 
         i += 1
     print('Fim de jogo')

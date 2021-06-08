@@ -86,6 +86,7 @@ def pegar_posicao():
                     return True
             else:
                 return True
+                
     return main()
 
 
