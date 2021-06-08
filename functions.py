@@ -4,11 +4,17 @@ import random
 lista_itens = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]  
 lista_resultado = random.sample(lista_itens, 16)
 
-#l --- inhas apresentadas ---
+#l --- linhas apresentadas ---
 linha_1 = ['x', 'x', 'x', 'x']
 linha_2 = ['x', 'x', 'x', 'x']
 linha_3 = ['x', 'x', 'x', 'x']
 linha_4 = ['x', 'x', 'x', 'x']
+
+# ----- linhas gabarito --------
+linhaf_1 = lista_resultado[0:4]
+linhaf_2 = lista_resultado[4:8]
+linhaf_3 = lista_resultado[8:12]
+linhaf_4 = lista_resultado[12:]
 
 
 # ========functions ========
@@ -38,7 +44,7 @@ def pegar_posicao():
         posicao = [x, y]
         return posicao
 
-    def validar_inteiro(texto):
+    def validar_inteiro(texto):  #valida as entradas
         valid = False
         while not valid:
             try:
@@ -49,31 +55,31 @@ def pegar_posicao():
                 return x
 
     def verificar_posicao(x, y): #verificar se posição é válida
-        if (x != 1 and x != 2 and x != 3 and x != 4) or (y != 1 and y != 2 and y != 3 and y != 4):
+        if ((x != 0) and (x != 1) and (x != 2) and (x != 3)) or ((y != 0) and (y != 1) and (y != 2) and (y != 3)):
             print('posição inválida')
             return False
         else:
-            if y == 0:
-                if linha_1[x - 1] != 'x':
+            if x == 0:
+                if linha_1[y] != 'x':
                     print('Célula já revelada. Digite uma posição válida.')
                     return False
                 else:
                     return True
 
-            elif y == 1:
-                if linha_1[x - 1] != 'x':
+            elif x == 1:
+                if linha_2[y] != 'x':
                     print('Célula já revelada. Digite uma posição válida.')
                     return False
                 else:
                     return True
             elif y == 2:
-                if linha_1[x - 1] != 'x':
+                if linha_3[y] != 'x':
                     print('Célula já revelada. Digite uma posição válida.')
                     return False
                 else:
                     return True
-            elif y == 3:
-                if linha_1[x - 1] != 'x':
+            elif x == 3:
+                if linha_3[y] != 'x':
                     print('Célula já revelada. Digite uma posição válida.')
                     return False
                 else:
@@ -82,8 +88,8 @@ def pegar_posicao():
                 return True
     return main()
 
-def verificar_posicao(line_1, line_2, line_3, line_4, pos_1, pos_2):
-    print('Verificando')
+
+
 
 
 
