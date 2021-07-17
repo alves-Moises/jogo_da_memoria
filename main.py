@@ -13,7 +13,7 @@ def main():
     i = 0
 
     while game == True:
-        # print('\n' * 150)
+        print('\n' * 150)
         #========================= IMPRIMIR A TABELA ====================================
         functions.imprimir_quadro(functions.linha_1, functions.linha_2, functions.linha_3, functions.linha_4)
         # imprimir todos os resultados: 
@@ -260,7 +260,7 @@ def main():
             print(nova_linha_1, nova_linha_2)
             print(f'temp1: {temp_1}')
             print(f'temp1: {temp_2}')
-
+        input('Digite enter para continuar')
     # ======= salvar as posições ===========
         if temp_1 == temp_2:
 
