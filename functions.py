@@ -1,4 +1,6 @@
 import random
+import os
+
 
 # =================== variaveis de inicio =========================
 lista_itens = [1, 2, 3, 4, 5, 6, 7, 8, 1, 2, 3, 4, 5, 6, 7, 8]  
@@ -79,7 +81,7 @@ def pegar_posicao():
                 else:
                     return True
             elif x == 3:
-                if linha_3[y] != 'x':
+                if linha_4[y] != 'x':
                     print('Célula já revelada. Digite uma posição válida.')
                     return False
                 else:
@@ -89,6 +91,12 @@ def pegar_posicao():
 
     return main()
 
+
+def clearConsole():
+    command = 'clear'
+    if os.name in ('nt', 'dos'):  # If Machine is running on Windows, use cls
+        command = 'cls'
+    os.system(command)
 
 
 
